@@ -1,3 +1,31 @@
+# Microsoft Entra SoD Access Certification & Remediation
+
+Hands-on IAM governance project demonstrating automated Segregation of Duties (SoD) detection, certificate-based Microsoft Graph AppOnly authentication, reviewer-approved access remediation, and post-remediation validation in Microsoft Entra ID.
+
+## Project Scenario
+
+A test identity was intentionally assigned to two incompatible finance access groups:
+
+- `SG_FIN_Invoice_Creator`
+- `SG_FIN_Invoice_Approver`
+
+The project detected the conflicting access through Microsoft Graph and PowerShell, documented a reviewer decision, remediated the approved group membership, and validated that the SoD conflict was eliminated.
+
+## Key Result
+
+`SOD CONFLICT` → reviewer approval → authorized remediation → `NO SOD CONFLICT`
+
+Final validation:
+
+- **Validation:** PASSED
+- **Creator Access:** Retained
+- **Approver Access:** Removed
+- **Conflicting Users:** 0
+
+## Technologies
+
+Microsoft Entra ID · Microsoft Graph · PowerShell 7 · App Registration · Service Principal · X.509 Certificate · AppOnly Authentication
+
 ## Evidence Gallery & Validation
 
 The screenshots below document the complete Lab 15 workflow from access-model setup and SoD conflict detection through reviewer approval, permission troubleshooting, remediation, and final validation.
